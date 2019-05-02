@@ -1,4 +1,4 @@
-package com.bridgelabz.fundooNotes.user.exception;
+package com.bridgelabz.fundooUser.user.exception;
 
 public class UserException extends RuntimeException
 {

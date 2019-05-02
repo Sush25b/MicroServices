@@ -1,23 +1,23 @@
-package com.bridgelabz.fundooNotes.user.service;
+package com.bridgelabz.fundooUser.user.service;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-
-
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import com.bridgelabz.fundooNotes.user.dto.UserDto;
-import com.bridgelabz.fundooNotes.user.exception.UserException;
+import com.bridgelabz.fundooUser.user.dto.UserDto;
+import com.bridgelabz.fundooUser.user.exception.UserException;
+import com.bridgelabz.fundooUser.user.model.User;
+import com.bridgelabz.fundooUser.user.repository.IUserRepository;
+
+
 //import com.bridgelabz.fundooNotes.user.dto.UserDto;
-import com.bridgelabz.fundooNotes.user.model.User;
-import com.bridgelabz.fundooNotes.user.repository.IUserRepository;
-import com.bridgelabz.fundooNotes.utility.MailHelper;
+
 
 //import com.bridgelabz.fundooNotes.service.User;
 //import com.bridgelabz.fundooNotes.service.UserRepository;
@@ -100,7 +100,7 @@ public class UserServiceImpl implements UserService
 	{
 		userrepository.deleteById(id);
 	}
-	
+
 }
 
 

@@ -19,11 +19,10 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.bridgelabz.fundooNote.label.model.Label;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name="Note")
+@Table(name="NoteService")
 public class Note
 {
 	@Id
@@ -61,8 +60,8 @@ public class Note
 	@Column(name ="userId")
 	private Long userId;
 	
-	@ManyToMany(cascade= {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
-	private Set<Label> label;
+//	@ManyToMany(cascade= {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
+//	private Set<Label> label;
 
 //	@JoinTable(
 //				name="note_label",
@@ -177,7 +176,7 @@ public class Note
 		return "Note [noteId=" + noteId + ", title=" + title + ", description=" + description + ", color=" + color
 				+ ", isPinned=" + isPinned + ", isTrash=" + isTrash + ", isArchive=" + isArchive + ", reminder="
 				+ reminder + ", createdTime=" + createdTime + ", lastUpdateTime=" + lastUpdateTime + ", userId="
-				+ userId + ", label=" + label + "]";
+				+ userId  + "]";
 	}
 	
 }

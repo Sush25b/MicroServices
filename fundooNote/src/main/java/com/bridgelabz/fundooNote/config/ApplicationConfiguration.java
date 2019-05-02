@@ -34,7 +34,7 @@ public class ApplicationConfiguration
 	
 	@Bean
     public Docket productApi() {
-        return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.basePackage("com.bridgelabz.fundooNotes"))
+        return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.basePackage("com.bridgelabz.fundooNote"))
                // .paths(regex("/product.*"))
                 .build();
 	}

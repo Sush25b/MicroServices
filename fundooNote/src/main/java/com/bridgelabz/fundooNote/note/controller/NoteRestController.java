@@ -140,13 +140,13 @@ public class NoteRestController
 		return noteServices.deleteReminder(noteid, jwtToken);
 	}
 	 
-	 @PostMapping(value="/search")
-	 public List<Note> getNoteByAllFeilds(@RequestParam("searchName") String searchName,@RequestHeader(value="jwtToken") String jwtToken) throws Exception 
-	 {
-		 System.out.println("!!!!!!!");
-		 Long userid = TokenUtil.decodeToken(jwtToken);
-	      return esService.getNoteByAllFeilds(searchName,userid);
-	 }
+//	 @PostMapping(value="/search")
+//	 public List<Note> getNoteByAllFeilds(@RequestParam("searchName") String searchName,@RequestHeader(value="jwtToken") String jwtToken) throws Exception 
+//	 {
+//		 System.out.println("!!!!!!!");
+//		 Long userid = TokenUtil.decodeToken(jwtToken);
+//	      return esService.getNoteByAllFeilds(searchName,userid);
+//	 }
 	 
 	
 //	@GetMapping(path="/search") 

@@ -1,4 +1,4 @@
-package com.bridgelabz.fundooNotes.user.controller;
+package com.bridgelabz.fundooUser.user.controller;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -10,7 +10,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.List;
 import java.util.UUID;
 
-import javax.mail.Multipart;
+
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,16 +34,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.bridgelabz.fundooNotes.user.dto.LoginDto;
-import com.bridgelabz.fundooNotes.user.dto.UserDto;
-import com.bridgelabz.fundooNotes.user.exception.UserException;
-import com.bridgelabz.fundooNotes.user.exception.UserException2;
-import com.bridgelabz.fundooNotes.user.model.User;
-import com.bridgelabz.fundooNotes.user.response.UserResp;
-import com.bridgelabz.fundooNotes.user.response.UserResponse;
-import com.bridgelabz.fundooNotes.user.service.UserService;
-import com.bridgelabz.fundooNotes.user.service.UserServicesImpl;
-import com.bridgelabz.fundooNotes.utility.TokenUtil;
+import com.bridgelabz.fundooUser.user.dto.LoginDto;
+import com.bridgelabz.fundooUser.user.dto.UserDto;
+import com.bridgelabz.fundooUser.user.exception.UserException;
+import com.bridgelabz.fundooUser.user.model.User;
+import com.bridgelabz.fundooUser.user.response.UserResp;
+import com.bridgelabz.fundooUser.user.response.UserResponse;
+import com.bridgelabz.fundooUser.user.service.UserService;
+import com.bridgelabz.fundooUser.user.service.UserServicesImpl;
+import com.bridgelabz.fundooUser.utility.TokenUtil;
+
 
 @RestController
 @RequestMapping("/fundooNotes")

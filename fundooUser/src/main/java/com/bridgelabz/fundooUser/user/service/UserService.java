@@ -1,9 +1,9 @@
-package com.bridgelabz.fundooNotes.user.service;
+package com.bridgelabz.fundooUser.user.service;
 
 import java.util.List;
 
-import com.bridgelabz.fundooNotes.user.dto.UserDto;
-import com.bridgelabz.fundooNotes.user.model.User;
+import com.bridgelabz.fundooUser.user.dto.UserDto;
+import com.bridgelabz.fundooUser.user.model.User;
 
 public interface UserService 
 {

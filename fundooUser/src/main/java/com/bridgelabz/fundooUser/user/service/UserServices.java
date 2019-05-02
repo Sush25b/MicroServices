@@ -1,18 +1,18 @@
-package com.bridgelabz.fundooNotes.user.service;
+package com.bridgelabz.fundooUser.user.service;
 
 import java.io.UnsupportedEncodingException;
 
-import javax.mail.Multipart;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.bridgelabz.fundooNotes.user.dto.LoginDto;
-import com.bridgelabz.fundooNotes.user.dto.UserDto;
-import com.bridgelabz.fundooNotes.user.exception.UserException;
-import com.bridgelabz.fundooNotes.user.response.UserResp;
-import com.bridgelabz.fundooNotes.user.response.UserResponse;
+import com.bridgelabz.fundooUser.user.dto.LoginDto;
+import com.bridgelabz.fundooUser.user.dto.UserDto;
+import com.bridgelabz.fundooUser.user.response.UserResp;
+import com.bridgelabz.fundooUser.user.response.UserResponse;
+
+
 
 public interface UserServices 
 {

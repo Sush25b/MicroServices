@@ -1,4 +1,4 @@
-package com.bridgelabz.fundooNotes.user.response;
+package com.bridgelabz.fundooUser.user.response;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

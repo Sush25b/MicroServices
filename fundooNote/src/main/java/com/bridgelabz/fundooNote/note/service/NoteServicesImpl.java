@@ -12,7 +12,7 @@ import java.util.Optional;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
-import org.elasticsearch.cli.UserException;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
@@ -22,6 +22,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.bridgelabz.fundooNote.exception.UserException;
 import com.bridgelabz.fundooNote.note.dto.NoteDto;
 import com.bridgelabz.fundooNote.note.model.Note;
 import com.bridgelabz.fundooNote.note.repository.NoteRepository;
@@ -69,6 +70,7 @@ public class NoteServicesImpl implements NoteServices
 		{
 				note.setCreatedTime(currDateTime);
 				note.setLastUpdateTime(currDateTime);
+				note.setUserId(userId);
 		}
 		else
 		{
@@ -82,6 +84,7 @@ public class NoteServicesImpl implements NoteServices
 
 	/**
 	 * trash note
+	 * @throws UserException 
 	 */
 	public ResponseEntity<UserResponse> trashNote(Long noteId, String token) 
 	{
@@ -97,7 +100,7 @@ public class NoteServicesImpl implements NoteServices
 		List<Note> notes=noteRepository.findAll();
 		
 		//from the Notes List-->filter to get particular note by noteid
-		Note filteredNote = notes.stream().filter(data -> data.getNoteId().equals(noteId)).findFirst().orElseThrow(() -> new UserException(0, environment.getProperty("user.note")));
+		Note filteredNote = notes.stream().filter(data -> data.getNoteId().equals(noteId)).findFirst().orElseThrow(() -> new UserException(environment.getProperty("user.note")));
 
 		//check particular note Pinned STATUS  
 		if(filteredNote.isTrash()==true)
@@ -106,6 +109,7 @@ public class NoteServicesImpl implements NoteServices
 			filteredNote.setLastUpdateTime(currDateTime);    
 			//add the changed note to-->User Notes List
 			noteRepository.save(filteredNote);
+			return ResponseSender.sendUserResponse("Note is untrashed",200);
 		}
 		else
 		{
@@ -113,9 +117,8 @@ public class NoteServicesImpl implements NoteServices
 			filteredNote.setLastUpdateTime(currDateTime);    
 			//add the changed note to-->User Notes List
 			noteRepository.save(filteredNote);
+			return ResponseSender.sendUserResponse("Note moved to trash",200);
 		}
-	
-		return ResponseSender.sendUserResponse("Note moved to trash",200);
 	}
 
 	//Read //get
@@ -358,33 +361,36 @@ public class NoteServicesImpl implements NoteServices
 	 */
 	public ResponseEntity<UserResponse> addReminder(Long noteid, String reminder, String token)
 	{
-		Long userid = TokenUtil.decodeToken(token);
-		User user = userRepository.findById(userid)
-				.orElseThrow(() -> new UserException(404, "userid not found"));
-		DateFormat dateAndTimeFormat = new SimpleDateFormat("E MMM dd yyyy HH:mm:ss");
-		Date date = null;
-		try {
-			date = dateAndTimeFormat.parse(reminder);
-			System.out.println(date);
-			SimpleDateFormat sdf=new SimpleDateFormat("MMM-dd HH:mm a");
-			
-			Note note = user.getNote().stream().filter(data ->data.getNoteId().equals(noteid)).findFirst().get();
-
-			note.setReminder(sdf.format(date));
-			//note.setReminder(reminder);
-			System.out.println(date);
-			
-			note.setLastUpdateTime(LocalDateTime.now());
-			user.getNote().add(note);
-			userRepository.save(user);
-			return ResponseSender.sendUserResponse("reminder successfully", 200);
-			
-		}
-		catch (ParseException e) 
-		{
-			e.printStackTrace();
-		}
-		return ResponseSender.sendUserResponse("reminder not added", 200);
+		return null;
+//		Long userid = TokenUtil.decodeToken(token);
+//		User user = userRepository.findById(userid).orElseThrow(() -> new UserException(404, "userid not found"));
+//		
+//		
+//		DateFormat dateAndTimeFormat = new SimpleDateFormat("E MMM dd yyyy HH:mm:ss");
+//		Date date = null;
+//		try {
+//			date = dateAndTimeFormat.parse(reminder);
+//			System.out.println(date);
+//			SimpleDateFormat sdf=new SimpleDateFormat("MMM-dd HH:mm a");
+//			
+//			Note note = user.getNote().stream().filter(data ->data.getNoteId().equals(noteid)).findFirst().get();
+//
+//			note.setReminder(sdf.format(date));
+//			//note.setReminder(reminder);
+//			System.out.println(date);
+//			
+//			note.setLastUpdateTime(LocalDateTime.now());
+//			user.getNote().add(note);
+//			userRepository.save(user);
+//			return ResponseSender.sendUserResponse("reminder successfully", 200);
+//			
+//		}
+//		catch (ParseException e) 
+//		{
+//			e.printStackTrace();
+//		}
+//		return ResponseSender.sendUserResponse("reminder not added", 200);
+		
 	}
 	
 	

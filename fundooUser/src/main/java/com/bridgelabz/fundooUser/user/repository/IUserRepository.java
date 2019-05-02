@@ -1,10 +1,8 @@
-package com.bridgelabz.fundooNotes.user.repository;
+package com.bridgelabz.fundooUser.user.repository;
 
 import java.util.Optional;
-
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.bridgelabz.fundooNotes.user.model.User;
+import com.bridgelabz.fundooUser.user.model.User;
 
 public interface IUserRepository extends JpaRepository<User, Long>
 {

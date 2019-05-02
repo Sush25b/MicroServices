@@ -1,4 +1,5 @@
-package com.bridgelabz.fundooNotes.user.service;
+package com.bridgelabz.fundooUser.user.service;
+
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;

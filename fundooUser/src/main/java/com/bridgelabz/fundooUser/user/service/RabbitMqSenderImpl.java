@@ -1,4 +1,5 @@
-package com.bridgelabz.fundooNotes.user.service;
+package com.bridgelabz.fundooUser.user.service;
+
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

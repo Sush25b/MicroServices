@@ -1,4 +1,4 @@
-package com.bridgelabz.fundooNotes.user.response;
+package com.bridgelabz.fundooUser.user.response;
 
 public class UserResp
 {

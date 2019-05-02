@@ -1,12 +1,11 @@
-package com.bridgelabz.fundooNotes.user.exception;
+package com.bridgelabz.fundooUser.user.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
-import com.bridgelabz.fundooNotes.user.response.UserResponse;
+import com.bridgelabz.fundooUser.user.response.UserResponse;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler

@@ -1,4 +1,4 @@
-package com.bridgelabz.fundooNotes.user.service;
+package com.bridgelabz.fundooUser.user.service;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -22,21 +22,21 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.bridgelabz.fundooNotes.user.dto.LoginDto;
-import com.bridgelabz.fundooNotes.user.dto.UserDto;
-import com.bridgelabz.fundooNotes.user.exception.UserException;
-import com.bridgelabz.fundooNotes.user.exception.UserException2;
-import com.bridgelabz.fundooNotes.user.model.User;
-import com.bridgelabz.fundooNotes.user.repository.IUserRepository;
-import com.bridgelabz.fundooNotes.user.response.ResponseSender;
-import com.bridgelabz.fundooNotes.user.response.UserResp;
-import com.bridgelabz.fundooNotes.user.response.UserResponse;
-import com.bridgelabz.fundooNotes.utility.MailHelper;
-import com.bridgelabz.fundooNotes.utility.TokenUtil;
+
+import com.bridgelabz.fundooUser.user.dto.LoginDto;
+import com.bridgelabz.fundooUser.user.dto.UserDto;
+import com.bridgelabz.fundooUser.user.exception.UserException;
+import com.bridgelabz.fundooUser.user.model.User;
+import com.bridgelabz.fundooUser.user.repository.IUserRepository;
+import com.bridgelabz.fundooUser.user.response.ResponseSender;
+import com.bridgelabz.fundooUser.user.response.UserResp;
+import com.bridgelabz.fundooUser.user.response.UserResponse;
+import com.bridgelabz.fundooUser.utility.MailHelper;
+import com.bridgelabz.fundooUser.utility.TokenUtil;
+
 import java.util.Properties;
 
 import javax.mail.Authenticator;
-import javax.mail.Multipart;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.servlet.http.HttpServletResponse;
@@ -437,9 +437,6 @@ public class UserServicesImpl implements UserServices {
 	    
 		MailHelper.sendEmail(session, toEmail, mailSubject, MailHelper.getUrl2(userId) +attachString);
 	}
-
-
-	
 
 }
 

@@ -2,6 +2,7 @@ package com.bridgelabz.fundooNote.note.service;
 
 import java.util.List;
 
+import org.elasticsearch.cli.UserException;
 import org.springframework.http.ResponseEntity;
 
 import com.bridgelabz.fundooNote.note.dto.NoteDto;

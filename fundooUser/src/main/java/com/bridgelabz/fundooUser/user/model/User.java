@@ -1,4 +1,4 @@
-package com.bridgelabz.fundooNotes.user.model;
+package com.bridgelabz.fundooUser.user.model;
 
 import java.util.List;
 import java.util.Set;
@@ -14,11 +14,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.bridgelabz.fundooNotes.label.model.Label;
-import com.bridgelabz.fundooNotes.note.model.Note;
-
 @Entity
-@Table(name="User")
+@Table(name="Userservice")
 public class User
 {
 	@Id
@@ -59,13 +56,13 @@ public class User
 //	@OneToMany(mappedBy="usere")
 //	private List<Label> labels;
 
-	@OneToMany(targetEntity=Note.class, cascade =CascadeType.ALL)
-	@JoinColumn(name="id")
-	List<Note> note;
-	
-	@OneToMany(targetEntity=Label.class, cascade =CascadeType.ALL)
-	@JoinColumn(name="id")
-	Set<Label> label;
+//	@OneToMany(targetEntity=Note.class, cascade =CascadeType.ALL)
+//	@JoinColumn(name="id")
+//	List<Note> note;
+//	
+//	@OneToMany(targetEntity=Label.class, cascade =CascadeType.ALL)
+//	@JoinColumn(name="id")
+//	Set<Label> label;
 	
 
 	public String getProfileImage() {
@@ -147,28 +144,28 @@ public class User
 	public void setIsVerified(String isVerified) {
 		this.isVerified = isVerified;
 	}
-
-	public List<Note> getNote() {
-		return note;
-	}
-
-	public void setNote(List<Note> note) {
-		this.note = note;
-	}
-
-	public Set<Label> getLabel() {
-		return label;
-	}
-
-	public void setLabel(Set<Label> label) {
-		this.label = label;
-	}
+//
+//	public List<Note> getNote() {
+//		return note;
+//	}
+//
+//	public void setNote(List<Note> note) {
+//		this.note = note;
+//	}
+//
+//	public Set<Label> getLabel() {
+//		return label;
+//	}
+//
+//	public void setLabel(Set<Label> label) {
+//		this.label = label;
+//	}
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", emailid=" + emailid
 				+ ", phoneno=" + phoneno + ", password=" + password + ", updateDate=" + updateDate + ", registerDate="
-				+ registerDate + ", isVerified=" + isVerified + ", note=" + note + ", label=" + label + "]";
+				+ registerDate + ", isVerified=" + isVerified + ", note="  + ", label=" + "]";
 	}
 
 	

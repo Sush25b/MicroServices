@@ -1,4 +1,4 @@
-package com.bridgelabz.fundooNotes.user.dto;
+package com.bridgelabz.fundooUser.user.dto;
 
 public class LoginDto 
 {
